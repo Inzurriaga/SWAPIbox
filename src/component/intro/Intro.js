@@ -13,9 +13,9 @@ export default class Intro extends Component{
         const randomNum = Math.ceil(Math.random() * 7)
         console.log(randomNum)
         const url = `https://swapi.co/api/films/${randomNum}`
-        fetch(url).
-            then(response => response.json()).
-            then(films => this.setState({
+        fetch(url)
+            .then(response => response.json())
+            .then(films => this.setState({
                 title: films.title,
                 bodytext: films.opening_crawl
             }))

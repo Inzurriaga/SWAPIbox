@@ -16,15 +16,28 @@ export default class PeoplesContainer extends Component {
             const url = "https://swapi.co/api/people/"
             fetch(url)
                 .then(response => response.json())
-                .then(people => 
+                .then(peoples => this.fetchHomeWorldInfo(peoples.results))
+                .then(completePeople => { 
+                    console.log(completePeople) 
                     this.setState({
-                    peoples: people.results}))
+                    peoples: completePeople
+                })})
         }
     }
 
+    fetchHomeWorldInfo = (peoples) => {
+        const homewordUpdate = peoples.map((people) => {
+            return fetch(people.homeworld)
+                .then(response => response.json())
+                .then(worldinfo => ({... worldinfo, peopleName: people.name}))
+        })
+        return Promise.all(homewordUpdate)
+    }
+
+
     render(){
         return(
-            <div>
+            <div className="peoples-container">
                 {
                    this.state.peoples.map((people) => {
                        return <PeopleCard people={people}/>
