@@ -25,12 +25,21 @@ export default class Intro extends Component{
         })
     }
 
+    saveContainerInfo = (containerName, containerInfo) => {
+        this.setState({
+            [containerName]: containerInfo
+        })
+    }
+
     render = () => {
         const {containerDisplay, peoplesinfo, planetsinfo, vehicleinfo } = this.state
         const componentContainer = {
-            peopleContainer: (<PeoplesContainer peoplesinfo={peoplesinfo}/>),
-            planetsContainer: (<PlanetsContainer planetsinfo={planetsinfo}/>),
-            vehiclesContainer: (<VehicleContainer vehicleinfo={vehicleinfo}/>)
+            peopleContainer: (<PeoplesContainer saveContainerInfo={this.saveContainerInfo} 
+                                                peoplesinfo={peoplesinfo}/>),
+            planetsContainer: (<PlanetsContainer saveContainerInfo={this.saveContainerInfo} 
+                                                planetsinfo={planetsinfo}/>),
+            vehiclesContainer: (<VehicleContainer saveContainerInfo={this.saveContainerInfo} 
+                                                vehicleinfo={vehicleinfo}/>)
         }
         return(
             <div>
