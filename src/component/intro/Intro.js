@@ -3,14 +3,14 @@ import React, { Component } from "react"
 export default class Intro extends Component{
     constructor(){
         super();
-        this.State = {
+        this.state = {
             title: "",
             bodytext: ""
         }
     }
 
     componentDidMount = () => {
-        const randomNum = Math.floor(Math.random() * 8)
+        const randomNum = Math.ceil(Math.random() * 7)
         console.log(randomNum)
         const url = `https://swapi.co/api/films/${randomNum}`
         fetch(url).
@@ -22,9 +22,12 @@ export default class Intro extends Component{
     }
 
     render = () => {
+        const { title, bodytext } = this.state
         return(
             <div>
-                <h1>hello world</h1>
+                <button onClick={this.props.exitIntro}></button>
+                <h1>{title}</h1>
+                <p>{bodytext}</p>
             </div>
         )
     }

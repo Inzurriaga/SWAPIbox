@@ -10,13 +10,19 @@ class App extends Component {
       intro: true
     }
   }
+
+  exitIntro = () => {
+    this.setState({
+      intro: false
+    })
+  }
   render() {
     const { intro } = this.state
     return (
       <div className="App">
        {
          intro ? 
-          <Intro />:
+          <Intro exitIntro={this.exitIntro}/>:
           <MainPage />
        }
       </div>
