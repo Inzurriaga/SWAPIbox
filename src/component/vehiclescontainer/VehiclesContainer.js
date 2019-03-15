@@ -1,15 +1,16 @@
 import React, { Component } from "react"
+import VehicleCard from "../vehiclecard/Vehiclecard"
 
 export default class VehiclesContainer extends Component {
     constructor(){
         super();
         this.state = {
-            test: true
+            vehicles: []
         }
     }
 
     componentDidMount = () => {
-        if(this.props.vehicleinfo){
+        if(this.props.vehicleinfo.length){
             console.log("vehicle")
         }else{
             const url = "https://swapi.co/api/vehicles/"
@@ -24,7 +25,11 @@ export default class VehiclesContainer extends Component {
     render(){
         return(
             <div>
-                this is the vehicles
+                {
+                    this.state.vehicles.map((vehicle) => {
+                       return  <VehicleCard vehicle={vehicle}/>
+                    })
+                }
             </div>
         )
     }

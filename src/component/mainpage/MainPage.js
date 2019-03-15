@@ -9,9 +9,9 @@ export default class Intro extends Component{
         super();
         this.state = {
             containerDisplay: "",
-            peoplesinfo: "",
-            planetsinfo: "",
-            vehicleinfo: ""
+            peoplesinfo: [],
+            planetsinfo: [],
+            vehicleinfo: []
         }
     }
 

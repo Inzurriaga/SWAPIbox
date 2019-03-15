@@ -1,15 +1,16 @@
 import React, { Component } from "react"
+import PlanetCard from "../planetcard/PlanetCard"
 
 export default class PlanetsContainer extends Component {
     constructor(){
         super();
         this.state = {
-            test: true
+            planets: []
         }
     }
 
     componentDidMount = () => {
-        if(this.props.planetsinfo){
+        if(this.props.planetsinfo.length){
             console.log("planet")
         }else{
             const url = "https://swapi.co/api/planets/"
@@ -24,7 +25,11 @@ export default class PlanetsContainer extends Component {
     render(){
         return(
             <div>
-                this is the planet
+                {
+                    this.state.planets.map((planet) => {
+                        return <PlanetCard planet={planet}/>
+                    })
+                }
             </div>
         )
     }

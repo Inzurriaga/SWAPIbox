@@ -1,17 +1,17 @@
 import React, { Component } from "react"
 
-export default class PeopleCard extends Component{
+export default class VehicleCard extends Component{
     constructor(){
         super();
         this.state = {
-            test: true
-        } 
+
+        }
     }
 
     render(){
         return(
             <div>
-               {this.props.people.name}
+                {this.props.vehicle.name}
             </div>
         )
     }

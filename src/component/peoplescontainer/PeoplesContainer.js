@@ -10,7 +10,7 @@ export default class PeoplesContainer extends Component {
     }
 
     componentDidMount = () => {
-        if(this.props.peoplesinfo){
+        if(this.props.peoplesinfo.length){
             console.log("people")
         }else{
             const url = "https://swapi.co/api/people/"
