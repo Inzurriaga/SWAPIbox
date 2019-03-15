@@ -25,7 +25,7 @@ export default class Intro extends Component{
         const { title, bodytext } = this.state
         return(
             <div>
-                <button onClick={this.props.exitIntro}></button>
+                <button onClick={this.props.exitIntro}>asdfas</button>
                 <h1>{title}</h1>
                 <p>{bodytext}</p>
             </div>
