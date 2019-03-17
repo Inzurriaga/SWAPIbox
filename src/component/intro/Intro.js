@@ -18,16 +18,22 @@ export default class Intro extends Component{
                 title: films.title,
                 bodytext: films.opening_crawl
             }))
+        setTimeout(this.props.exitIntro, 60000)
     }
 
     render = () => {
         const { title, bodytext } = this.state
         return(
-            <div>
-                <button onClick={this.props.exitIntro}>asdfas</button>
-                <h1>{title}</h1>
-                <p>{bodytext}</p>
-            </div>
+            <section className="intro-section">
+                <button onClick={this.props.exitIntro}>x</button>
+                <div className="fade"></div>
+                <div className="crawl-text">
+                    <div className="crawl">
+                        <h1>{title}</h1>
+                        <p>{bodytext}</p>
+                    </div>
+                </div>
+            </section>
         )
     }
 }
