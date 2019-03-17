@@ -14,11 +14,18 @@ export default class Buttons extends Component{
 
     render(){
         return(
-            <div>
-                <button onClick={() => {this.switchContainer("peopleContainer")}}>peoples</button>
-                <button onClick={() => {this.switchContainer("planetsContainer")}}>planets</button>
-                <button onClick={() => {this.switchContainer("vehiclesContainer")}}>vehicles</button>
-            </div>
+            <nav>
+                <div>
+                    <button data-text="People" onClick={() => {this.switchContainer("peopleContainer")}}>Peoples</button>
+                </div>
+                <div>
+                    <button data-text="Planets" onClick={() => {this.switchContainer("planetsContainer")}}>Planets</button>
+                </div>
+                <div>
+                    <button data-text="Vehicles" 
+                onClick={() => {this.switchContainer("vehiclesContainer")}}>Vehicles</button>
+                </div>
+            </nav>
         )
     }
 }

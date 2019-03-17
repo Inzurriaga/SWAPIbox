@@ -1,0 +1,71 @@
+nav {
+    display: flex;
+    padding: 20px;
+    justify-content: space-around;
+    width: 60%;
+    margin: 20px auto;
+    background-color: #262a2d;
+    div {
+        border-right: solid 8px #3f5567;
+        border-left: solid 8px  #3f5567;
+        cursor: pointer;
+        button{
+            cursor: pointer;
+            border: none;
+            border-right: solid 8px #262a2d;
+            border-left: solid 8px  #262a2d;
+            color: #78b8ed;
+            background-color: #3f5567;
+            font-size:50px;
+            position:relative;
+            width: 250px;
+            margin:0 auto;
+          }
+          button:after{
+            content:attr(data-text);
+            position:absolute;
+            left: 44px;
+            top:0;
+            background-color: #3f5567;
+            color: #78b8ed;
+            overflow:hidden;
+            clip:rect(0,900px,0,0); 
+            animation:glitch-anim 10s 1s infinite linear alternate-reverse;
+          }
+          button:before{
+            content:attr(data-text);
+            position:absolute;
+            left:38px;
+            background-color: #3f5567;
+            top:0;
+            color: #78b8ed;
+            overflow:hidden;
+            clip:rect(0,900px,0,0); 
+            animation:glitch-anim 10s infinite linear alternate-reverse;
+          }
+    }
+}
+
+@keyframes glitch-anim {
+    0% {
+      clip: rect(70px, 450px, 76px, 0);
+    }
+    5% {
+      clip: rect(29px, 450px, 16px, 0);
+    }
+    10% {
+      clip: rect(76px, 450px, 3px, 0);
+    }
+    15% {
+      clip: rect(42px, 450px, 78px, 0);
+    }
+    20% {
+      clip: rect(15px, 450px, 13px, 0);
+    }
+    25% {
+      clip: rect(53px, 450px, 5px, 0);
+    }
+    26%, 100% {
+        clip:rect(0,900px,0,0)
+    }
+  }

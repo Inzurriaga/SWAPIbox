@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Buttons from "../buttons/Buttons";
+import { ReactComponent as Star } from "../../image/star.svg"
+import { ReactComponent as Wars } from "../../image/wars.svg"
 import PeoplesContainer from "../peoplescontainer/PeoplesContainer"
 import PlanetsContainer from "../planetscontainer/PlanetsContainer"
 import VehicleContainer from "../vehiclescontainer/VehiclesContainer"
@@ -43,7 +45,21 @@ export default class Intro extends Component{
         }
         return(
             <div>
-                <h1>im the main page</h1>
+                <header>
+                    <Star className="star-title"/>
+                    <h2>
+                        <span>S</span>
+                        <span>w</span>
+                        <span>a</span>
+                        <span>p</span>
+                        <span>i</span>
+                        <span>-</span>
+                        <span>B</span>
+                        <span>o</span>
+                        <span>x</span>
+                    </h2>
+                    <Wars className="wars-title"/>
+                </header>
                 <Buttons switchContainer={this.switchContainer}/>
                 {componentContainer[containerDisplay]}
             </div>
