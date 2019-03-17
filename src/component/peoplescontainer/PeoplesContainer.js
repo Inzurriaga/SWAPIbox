@@ -9,36 +9,35 @@ export default class PeoplesContainer extends Component {
         }
     }
 
-    componentDidMount = () => {
+    componentDidMount = async () => {
         if(this.props.peoplesinfo.length){
             console.log("people")
         }else{
             const url = "https://swapi.co/api/people/"
-            fetch(url)
-                .then(response => response.json())
-                .then(unresolvedHomeworld => this.fetchHomeWorldInfo(unresolvedHomeworld.results))
-                .then(unresolvedspecies => this.fetchSpeciesInfo(unresolvedspecies))
-                .then(resolvedPeople => this.setState({
+            const response = await fetch(url)
+            const unresolvedHomeworld = await response.json()
+            const unresolvedspecies = await this.fetchHomeWorldInfo(unresolvedHomeworld.results)
+            const resolvedPeople = await this.fetchSpeciesInfo(unresolvedspecies)
+            this.setState({
                     peoples: resolvedPeople
-                }))
+                })
         }
     }
 
     fetchHomeWorldInfo = (peoples) => {
-        const homewordUpdate = peoples.map((people) => {
-            return fetch(people.homeworld)
-                .then(response => response.json())
-                .then(worldinfo => ({...people, worldName: worldinfo.name, population: worldinfo.population}))
+        const homewordUpdate = peoples.map( async (people) => {
+            const response = await fetch(people.homeworld)
+            const worldinfo = await  response.json()
+            return {...people, worldName: worldinfo.name, population: worldinfo.population}
         })
         return Promise.all(homewordUpdate)
     }
 
     fetchSpeciesInfo = (peoples) => {
-        console.log(peoples)
-        const speciesUpdate = peoples.map((people) => {
-            return fetch(people.species[0])
-                .then(response => response.json())
-                .then(speciesinfo => ({...people, speciesName: speciesinfo.name}))
+        const speciesUpdate = peoples.map( async (people) => {
+            const response = await fetch(people.species[0])
+            const speciesinfo = await  response.json()
+            return {...people, speciesName: speciesinfo.name}
         })
         return Promise.all(speciesUpdate)
     }
@@ -49,7 +48,7 @@ export default class PeoplesContainer extends Component {
             <div className="peoples-container">
                 {
                    this.state.peoples.map((people) => {
-                       return <PeopleCard people={people}/>
+                       return <PeopleCard key={people.name} people={people}/>
                    })
                 }
             </div>

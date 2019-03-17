@@ -11,7 +11,6 @@ export default class Intro extends Component{
 
     componentDidMount = () => {
         const randomNum = Math.ceil(Math.random() * 7)
-        console.log(randomNum)
         const url = `https://swapi.co/api/films/${randomNum}`
         fetch(url)
             .then(response => response.json())
