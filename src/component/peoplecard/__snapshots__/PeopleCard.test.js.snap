@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`people_card should match snapshot 1`] = `
+<div
+  className="people-card"
+>
+  <h3>
+    bob
+  </h3>
+  <p>
+    species: 
+    human
+  </p>
+  <p>
+    world: 
+    earth
+  </p>
+  <p>
+    population: 
+    300
+  </p>
+</div>
+`;

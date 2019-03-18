@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import PlanetCard from "../planetcard/PlanetCard"
+import Loading from "../loading/LoadingScreen"
 
 export default class PlanetsContainer extends Component {
     constructor(){
@@ -39,12 +40,15 @@ export default class PlanetsContainer extends Component {
     }
 
     render(){
+        const cards = this.state.planets.map((planet) => {
+            return <PlanetCard key={planet.name} planet={planet}/>
+        })
         return(
             <div className="planets-container">
                 {
-                    this.state.planets.map((planet) => {
-                        return <PlanetCard key={planet.name} planet={planet}/>
-                    })
+                    this.state.planets.length ?
+                    cards:
+                    <Loading />
                 }
             </div>
         )

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`planet_card should match snapshot 1`] = `
+<div
+  className="planet-card"
+>
+  <h3>
+    earth
+  </h3>
+  <p>
+    Terrain: 
+    rocking
+  </p>
+  <p>
+    Population: 
+    3000
+  </p>
+  <p>
+    Climate: 
+  </p>
+  Residents:
+</div>
+`;
