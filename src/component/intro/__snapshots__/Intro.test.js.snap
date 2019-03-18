@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`intro should match snapshot 1`] = `
+<section
+  className="intro-section"
+>
+  <button>
+    x
+  </button>
+  <div
+    className="fade"
+  />
+  <div
+    className="crawl-text"
+  >
+    <div
+      className="crawl"
+    >
+      <h1 />
+      <p />
+    </div>
+  </div>
+</section>
+`;

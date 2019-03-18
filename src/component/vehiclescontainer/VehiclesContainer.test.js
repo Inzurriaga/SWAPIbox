@@ -1,8 +1,9 @@
 import React from "react"
 import { shallow } from "enzyme"
 
-describe("vehicle_card", () => {
-    it("should pass", () => {
+
+describe("vehicle_container", () => {
+    it("should pass a test", () => {
         expect(true).toEqual(true)
     })
 })

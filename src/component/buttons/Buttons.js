@@ -1,13 +1,6 @@
 import React, { Component } from "react"
 
 export default class Buttons extends Component{
-    constructor(){
-        super();
-        this.state = {
-            test: true
-        }
-    }
-
     switchContainer = (container) => {
         this.props.switchContainer(container)
     }

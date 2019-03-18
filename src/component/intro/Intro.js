@@ -9,15 +9,15 @@ export default class Intro extends Component{
         }
     }
 
-    componentDidMount = () => {
+    componentDidMount =  async () => {
         const randomNum = Math.ceil(Math.random() * 7)
         const url = `https://swapi.co/api/films/${randomNum}`
-        fetch(url)
-            .then(response => response.json())
-            .then(films => this.setState({
+        const response = await fetch(url)
+        const films = await response.json())
+        this.setState({
                 title: films.title,
                 bodytext: films.opening_crawl
-            }))
+            })
         setTimeout(this.props.exitIntro, 60000)
     }
 
