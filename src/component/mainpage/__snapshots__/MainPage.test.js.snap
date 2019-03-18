@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`main_page should match snapshot 1`] = `
+<section
+  className="main-section"
+>
+  <header>
+    <ForwardRef
+      className="star-title"
+    />
+    <h2>
+      <span>
+        S
+      </span>
+      <span>
+        w
+      </span>
+      <span>
+        a
+      </span>
+      <span>
+        p
+      </span>
+      <span>
+        i
+      </span>
+      <span>
+        -
+      </span>
+      <span>
+        B
+      </span>
+      <span>
+        o
+      </span>
+      <span>
+        x
+      </span>
+    </h2>
+    <ForwardRef
+      className="wars-title"
+    />
+  </header>
+  <Buttons
+    switchContainer={[Function]}
+  />
+  <img
+    alt="top-container"
+    className="top-container-dec"
+    src="containerdec.png"
+  />
+  <img
+    alt="bottom-container"
+    className="bottom-container-dec"
+    src="containerdec.png"
+  />
+</section>
+`;

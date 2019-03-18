@@ -19,7 +19,7 @@ export default class Intro extends Component{
     }
 
     componentDidMount = () => {
-         console.log("im working")
+        // local storage setstate here for the favorite
     }
 
     switchContainer = (container) => {
