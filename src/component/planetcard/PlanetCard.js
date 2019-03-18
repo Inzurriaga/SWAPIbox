@@ -4,9 +4,9 @@ export default class PlanetCard extends Component{
     render(){
         return(
             <div className="planet-card">
-                <p></p>{this.props.planet.name}
-                <p></p>{this.props.planet.terrain}
-                <p></p>{this.props.planet.population}
+                <h3>{this.props.planet.name}</h3>
+                <p>{this.props.planet.terrain}</p>
+                <p>{this.props.planet.population}</p>
                 <p>{this.props.planet.climate}</p>
                 {
                     this.props.planet.residents.map((resident) => {

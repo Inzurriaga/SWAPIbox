@@ -1,3 +1,9 @@
+.main-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 header {
     margin-top: 40px;
     display: flex;
@@ -20,6 +26,16 @@ header {
     .wars-title {
         animation: wars 4s ease-out forwards;
     }
+}
+
+.top-container-dec {
+    
+    width: 80%;
+}
+
+.bottom-container-dec {
+   transform: rotate(180deg);
+    width: 80%;
 }
 
 

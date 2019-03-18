@@ -11,10 +11,10 @@ export default class PeopleCard extends Component{
     render(){
         return(
             <div className="people-card">
-               <p>{this.props.people.name}</p>
-               <p>{this.props.people.worldName}</p>
-               <p>{this.props.people.speciesName}</p>
-               <p>{this.props.people.population}</p>
+               <h3>{this.props.people.name}</h3>
+               <p>species: {this.props.people.speciesName}</p>
+               <p>world: {this.props.people.worldName}</p>
+               <p>population: {this.props.people.population}</p>
             </div>
         )
     }

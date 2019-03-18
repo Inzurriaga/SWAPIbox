@@ -1,4 +1,11 @@
 .vehicle-card {
-    border: 2px solid black;
+    width: 200px;
+    background-color: #3f5567;
+    box-shadow: inset 0px -5px 10px#78b8ed;
+    padding: 10px;
     margin: 20px;
+    color: #78b8ed;
+    h3 {
+        color: #ffffff;
+    }
 }

@@ -24,7 +24,7 @@ export default class VehiclesContainer extends Component {
 
     render(){
         return(
-            <div>
+            <div className="vehicles-container">
                 {
                     this.state.vehicles.map((vehicle) => {
                        return  <VehicleCard vehicle={vehicle}/>
