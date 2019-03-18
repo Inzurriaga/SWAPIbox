@@ -5,19 +5,26 @@ export default class Intro extends Component{
         super();
         this.state = {
             title: "",
-            bodytext: ""
+            bodytext: "",
+            error: ""
         }
     }
 
     componentDidMount =  async () => {
         const randomNum = Math.ceil(Math.random() * 7)
         const url = `https://swapi.co/api/films/${randomNum}`
-        const response = await fetch(url)
-        const films = await response.json())
-        this.setState({
-                title: films.title,
-                bodytext: films.opening_crawl
+        try {
+            const response = await fetch(url)
+            const films = await response.json()
+            this.setState({
+                    title: films.title,
+                    bodytext: films.opening_crawl
+                })  
+        } catch(error) {
+            this.setState({
+                error: error.message
             })
+        } 
         setTimeout(this.props.exitIntro, 60000)
     }
 
