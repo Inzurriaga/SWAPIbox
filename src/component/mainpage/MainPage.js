@@ -6,44 +6,10 @@ import ContainerDecoration from "../../image/containerdec.png"
 import PeoplesContainer from "../peoplescontainer/PeoplesContainer"
 import PlanetsContainer from "../planetscontainer/PlanetsContainer"
 import VehicleContainer from "../vehiclescontainer/VehiclesContainer"
+import { Route } from "react-router-dom"
 
-export default class Intro extends Component{
-    constructor(){
-        super();
-        this.state = {
-            containerDisplay: "",
-            peoplesinfo: [],
-            planetsinfo: [],
-            vehicleinfo: []
-        }
-    }
-
-    componentDidMount = () => {
-        // local storage setstate here for the favorite
-    }
-
-    switchContainer = (container) => {
-        this.setState({
-            containerDisplay: container
-        })
-    }
-
-    saveContainerInfo = (containerName, containerInfo) => {
-        this.setState({
-            [containerName]: containerInfo
-        })
-    }
-
+export default class MainPage extends Component{
     render = () => {
-        const {containerDisplay, peoplesinfo, planetsinfo, vehicleinfo } = this.state
-        const componentContainer = {
-            peopleContainer: (<PeoplesContainer saveContainerInfo={this.saveContainerInfo} 
-                                                peoplesinfo={peoplesinfo}/>),
-            planetsContainer: (<PlanetsContainer saveContainerInfo={this.saveContainerInfo} 
-                                                planetsinfo={planetsinfo}/>),
-            vehiclesContainer: (<VehicleContainer saveContainerInfo={this.saveContainerInfo} 
-                                                vehicleinfo={vehicleinfo}/>)
-        }
         return(
             <section className="main-section">
                 <header>
@@ -63,7 +29,9 @@ export default class Intro extends Component{
                 </header>
                 <Buttons switchContainer={this.switchContainer}/>
                 <img className="top-container-dec" src={ContainerDecoration} alt="top-container"/>
-                {componentContainer[containerDisplay]}
+                <Route path="/peoples" component={ PeoplesContainer } />
+                <Route path="/planets" component={ PlanetsContainer } />
+                <Route path="/vehicles" component={ VehicleContainer } />
                 <img className="bottom-container-dec"src={ContainerDecoration} alt="bottom-container"/>
             </section>
         )

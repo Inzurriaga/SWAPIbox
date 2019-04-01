@@ -10,7 +10,6 @@ class App extends Component {
       intro: true
     }
   }
-
   exitIntro = () => {
     this.setState({
       intro: false

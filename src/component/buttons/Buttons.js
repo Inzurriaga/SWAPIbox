@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { NavLink } from "react-router-dom"
 
 export default class Buttons extends Component{
     switchContainer = (container) => {
@@ -9,14 +10,13 @@ export default class Buttons extends Component{
         return(
             <nav>
                 <div>
-                    <button data-text="People" onClick={() => {this.switchContainer("peopleContainer")}}>Peoples</button>
+                    <NavLink to="/peoples" data-text="People" >Peoples</NavLink>
                 </div>
                 <div>
-                    <button data-text="Planets" onClick={() => {this.switchContainer("planetsContainer")}}>Planets</button>
+                    <NavLink to="/planets" data-text="Planets" >Planets</NavLink>
                 </div>
                 <div>
-                    <button data-text="Vehicles" 
-                onClick={() => {this.switchContainer("vehiclesContainer")}}>Vehicles</button>
+                    <NavLink to="vehicles" data-text="Vehicles" >Vehicles</NavLink>
                 </div>
             </nav>
         )
